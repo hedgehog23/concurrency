@@ -7,11 +7,11 @@ import java.util.Random;
  */
 public class IntegerProducer implements Runnable {
 
-    private final SingleElementBuffer<Integer> buffer;
+    private final Buffer<Integer> buffer;
     private final String name;
     private final int producedValues;
 
-    public IntegerProducer(SingleElementBuffer<Integer> buffer, String name, int producedValues) {
+    public IntegerProducer(Buffer<Integer> buffer, String name, int producedValues) {
         this.buffer = buffer;
         this.name = name;
         this.producedValues = producedValues;

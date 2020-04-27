@@ -1,9 +1,11 @@
-package com.hedgehog23.concurrency;
+package com.hedgehog23.concurrency.sync;
+
+import com.hedgehog23.concurrency.Buffer;
 
 /**
  * @author sergeylapko
  */
-public class SingleElementBuffer<T> {
+public class SingleElementBuffer<T> implements Buffer<T> {
     private final Object lock = new Object();
     private T element;
 

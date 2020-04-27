@@ -4,10 +4,10 @@ package com.hedgehog23.concurrency;
  * @author sergeylapko
  */
 public class IntegerConsumer implements Runnable {
-    private final SingleElementBuffer<Integer> buffer;
+    private final Buffer<Integer> buffer;
     private int consumedValues;
 
-    public IntegerConsumer(SingleElementBuffer<Integer> buffer) {
+    public IntegerConsumer(Buffer<Integer> buffer) {
         this.buffer = buffer;
     }
 

@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class SingleElementBufferDemo {
     public static void main(String[] args) throws InterruptedException {
-        SingleElementBuffer<Integer> buffer = new SingleElementBuffer<>();
+        Buffer<Integer> buffer = createBuffer(args);
 
         Set<Thread> producers = new HashSet<>();
         Set<Thread> consumers = new HashSet<>();
@@ -29,10 +29,23 @@ public class SingleElementBufferDemo {
         producers.forEach(Thread::start);
         consumers.forEach(Thread::start);
 
-        Thread.sleep(1000);
-
-        while (producers.stream().anyMatch(Thread::isAlive));
+        while (producers.stream().anyMatch(Thread::isAlive)); // spin lock
 
         consumerGroup.interrupt();
+    }
+
+    private static Buffer<Integer> createBuffer(String[] args) {
+        if (args != null && args.length > 0) {
+            String arg0 = args[0];
+
+            switch (arg0) {
+                case "sync":
+                    return new com.hedgehog23.concurrency.sync.SingleElementBuffer<>();
+                case "lock":
+                    return new com.hedgehog23.concurrency.lock.SingleElementBuffer<>();
+            }
+        }
+
+        return new com.hedgehog23.concurrency.sync.SingleElementBuffer<>();
     }
 }
