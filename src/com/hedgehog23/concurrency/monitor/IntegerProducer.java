@@ -1,4 +1,4 @@
-package com.hedgehog23.concurrency;
+package com.hedgehog23.concurrency.monitor;
 
 import java.util.Random;
 

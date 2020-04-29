@@ -1,6 +1,6 @@
-package com.hedgehog23.concurrency.lock;
+package com.hedgehog23.concurrency.monitor.lock;
 
-import com.hedgehog23.concurrency.Buffer;
+import com.hedgehog23.concurrency.monitor.Buffer;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

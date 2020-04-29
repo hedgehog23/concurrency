@@ -1,6 +1,6 @@
-package com.hedgehog23.concurrency.sync;
+package com.hedgehog23.concurrency.monitor.sync;
 
-import com.hedgehog23.concurrency.Buffer;
+import com.hedgehog23.concurrency.monitor.Buffer;
 
 /**
  * @author sergeylapko
